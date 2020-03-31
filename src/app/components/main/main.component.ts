@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AppStore} from '../../model/store';
 import {SendData} from '../../model/actions';
-import {Store} from '@ngrx/store';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-main',
@@ -10,13 +10,13 @@ import {Store} from '@ngrx/store';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<AppStore>) {
   }
 
   ngOnInit() {
   }
 
   public onSend() {
-    this.store.d
+    this.store.dispatch(new SendData(13123))
   }
 }
